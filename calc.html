@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relaxation State Calculator</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+}
+
+form {
+    width: 100%;
+    margin: 20px 0;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Relaxation State Calculator</h1>
+        <form id="relaxationForm">
+            <label for="q1">How well do you manage stress on a daily basis?</label>
+            <select id="q1" name="q1">
+                <option value="0">Not well at all</option>
+                <option value="1">Somewhat well</option>
+                <option value="2">Moderately well</option>
+                <option value="3">Very well</option>
+            </select>
+
+            <label for="q2">How often do you engage in relaxation activities?</label>
+            <select id="q2" name="q2">
+                <option value="0">Rarely or never</option>
+                <option value="1">Occasionally</option>
+                <option value="2">Frequently</option>
+                <option value="3">Regularly</option>
+            </select>
+
+            <label for="q3">On a scale of 0 to 3, how overwhelmed do you feel with your current tasks?</label>
+            <select id="q3" name="q3">
+                <option value="0">Not at all</option>
+                <option value="1">A little</option>
+                <option value="2">Moderately</option>
+                <option value="3">Very much</option>
+            </select>
+
+            <label for="q4">How often do you find yourself worrying about the future?</label>
+            <select id="q4" name="q4">
+                <option value="0">Rarely or never</option>
+                <option value="1">Occasionally</option>
+                <option value="2">Frequently</option>
+                <option value="3">Regularly</option>
+            </select>
+
+            <label for="q5">Do you experience difficulty concentrating or making decission lately?</label>
+            <select id="q5" name="q5">
+                <option value="0">Not at all</option>
+                <option value="1">Occasionally</option>
+                <option value="2">Quite often</option>
+                <option value="3">all the time</option>
+            </select>
+
+            <label for="q6">How do you rate the quality of your sleep in past week?</label>
+            <select id="q6" name="q6">
+                <option value="0">Excellent</option>
+                <option value="1">Good</option>
+                <option value="2">Fair</option>
+                <option value="3">Poor</option>
+            </select>
+
+            <label for="q7">Are you feeling irretatable or easily angered recently?</label>
+            <select id="q7" name="q7">
+                <option value="0">Rarely or never</option>
+                <option value="1">Occasionally</option>
+                <option value="2">Frequently</option>
+                <option value="3">Constantly</option>
+            </select>
+
+            <label for="q8">Do you make time for relaxation and self care activities?</label>
+            <select id="q8" name="q8">
+                <option value="0">Regularly</option>
+                <option value="1">Occasionally</option>
+                <option value="2">Rarely</option>
+                <option value="3">Never</option>
+            </select>
+
+            <label for="q9">How satisfied are you with your work-life balance?</label>
+            <select id="q9" name="q9">
+                <option value="0">Very satisfied</option>
+                <option value="1">Somewhat satisfied</option>
+                <option value="2">Unsatisfied</option>
+                <option value="3">Very unsatisfied</option>
+            </select>
+
+            <label for="q10">Have you noticed any changes in your appetite(eating more or less unusual)?</label>
+            <select id="q10" name="q10">
+                <option value="0">No changes</option>
+                <option value="1">Slight changes</option>
+                <option value="2">Moderate changes</option>
+                <option value="3">Significant changes</option>
+            </select>
+
+           
+
+            
+
+            <button type="button" id="calculateButton">Calculate</button>
+        </form>
+        <p id="result"></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const calculateButton = document.getElementById("calculateButton");
+    calculateButton.addEventListener("click", function () {
+        calculateRelaxationState();
+    });
+});
+
+function calculateRelaxationState() {
+    
+    const q1 = parseInt(document.getElementById("q1").value);
+    const q2 = parseInt(document.getElementById("q2").value);
+    const q3 = parseInt(document.getElementById("q3").value);
+    const q4 = parseInt(document.getElementById("q4").value);
+    const q5 = parseInt(document.getElementById("q5").value);
+    const q6 = parseInt(document.getElementById("q6").value);
+    const q7 = parseInt(document.getElementById("q7").value);
+    const q8 = parseInt(document.getElementById("q8").value);
+    const q9 = parseInt(document.getElementById("q9").value);
+    const q10 = parseInt(document.getElementById("q10").value);
+    
+    const totalScore = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;
+
+    let relaxationState;
+
+    if (totalScore <= 2) {
+        relaxationState = "You might want to consider incorporating more relaxation activities into your routine.";
+    } else if (totalScore <= 4) {
+        relaxationState = "You are doing fairly well in managing stress and engaging in relaxation activities.";
+    } else {
+        relaxationState = "You seem to be in a good state of relaxation. Keep up the good work!";
+    }
+
+
+    document.getElementById("result").innerText = relaxationState;
+}
+    </script>
+</body>
+</html>

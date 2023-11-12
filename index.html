@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Your Website</title>
+  <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color:#C3E5AE;
+    margin-bottom: 20px;
+   
+}
+.interface{
+    width: 100%;
+    margin: auto;
+    height: 100vh;
+    background-size: 50px;
+    background-position: center;
+    
+    
+}
+video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -1000; /* Set z-index to a very low value to position it behind other elements */
+      transform: translateX(-50%) translateY(-50%);
+    }
+
+
+.banner{
+    display: flex;
+    margin-top: 80px;
+}
+.left-column,.right-column{
+    display: inline block;
+    width: 100px;
+    height: 100px;
+
+}
+.right-column{
+    width: 700px;
+    height: 700px;
+    margin-left: 50%;
+    margin-top: 10px;
+    
+}
+
+.left-column img{
+    width:400px;
+    height: 400px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.right-column h2{
+        font-size: 30px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        padding: 5px;
+        margin-top: 200px;
+        text-align:left;
+        margin-left: 30px;
+        
+       
+            
+}
+.right-column p{
+    font-size: 15px;
+    padding: 10px;
+    margin-right: 60px;
+}
+button{
+    width: 200px;
+    padding:15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    margin-right: 60px;
+    border-radius: 25px;
+    font-weight: bold;
+    border:2px solid#009688;
+    background: transparent;
+    color: black;
+    cursor:pointer;
+    position: relative;
+    overflow: hidden;
+
+
+}
+button:hover {
+  background-color: blue;
+  color: white;
+}
+  </style>
+</head>
+<body>
+    <video autoplay muted loop>
+        <!-- Replace 'your-video.mp4' with the path to your video file -->
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    <div class="banner">
+        <div class="left-column" >
+            <img src="emp.png" alt="pic">
+            
+                
+        </div>
+        <div class="right-column">
+            <h2>Brreakthrough</h2>
+            <p>Live More Stress Less</p>
+                <button type="button" onclick="window.location.href='login.html'" class="button">Log in</button>
+                <button type="button" onclick="window.location.href='sign.html'" class="button">Sign Up</button>
+        </div>
+      
+  </div>
+   
+    
+    
+
+</body>
+</html>
+
