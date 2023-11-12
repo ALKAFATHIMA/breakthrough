@@ -59,18 +59,18 @@
 <body>
 
 <div class="card-container">
-  <div class="card" id="mycard">
+  <div class="card" onclick="redirectToPage('calc.html')">
     <img src="https://via.placeholder.com/150" alt="Card 1">
     <div class="card-content">
-      <h3>Card 1</h3>
+      <h3>Stress Relief Calculator</h3>
       <p>Some text content for Card 1. This is a sample description.</p>
     </div>
   </div>
 
-  <div class="card" id="Card">
+  <div class="card" onclick="redirectToPage('fluid.html')">
     <img src="https://via.placeholder.com/150" alt="Card 2">
     <div class="card-content">
-      <h3>Card 2</h3>
+      <h3>Fluid Stimulator</h3>
       <p>Some text content for Card 2. This is a sample description.</p>
     </div>
   </div>
@@ -92,27 +92,23 @@
   </div>
 </div>
 
-<script defer>
-  // Get the card element by its ID
-  var card = document.getElementById('mycard');
-
-  // Add a click event listener to the card
-  card.addEventListener('click', function() {
-      // Redirect to the next page
-      window.location.href = 'calc.html';
-  });
-  var card = document.getElementById('Card');
-
-  // Add a click event listener to the card
-  card.addEventListener('click', function() {
-      // Redirect to the next page
-      window.location.href = 'C:\Users\hp\Downloads\hack\abc\fluid\fluid.html';
-  });
+<script >
+  function redirectToPage(url) {
+        window.location.href = url;
+    }
 </script>
 
 
 </body>
 </html>
+
+
+
+
+    
+
+   
+
 
 
 
